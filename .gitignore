@@ -1,0 +1,5 @@
+dist-cli/
+dist/
+node_modules/
+.idea
+my-custom-rules.iml
