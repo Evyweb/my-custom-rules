@@ -10,7 +10,6 @@ import noEmptyArrange from './rules/no-empty-arrange.js';
 import noEmptyLinesAfterIt from './rules/no-empty-lines-after-it.js';
 import noEmptyAct from './rules/no-empty-act.js';
 import noEmptyAssert from './rules/no-empty-assert.js';
-import noNewErrorInServer from './rules/no-new-error-in-server.js';
 import noTryCatchInTests from './rules/no-try-catch-in-tests.js';
 import singleSpecPerSut from './rules/single-spec-per-sut.js';
 import noWhenInIt from './rules/no-when-in-it.js';
@@ -29,7 +28,6 @@ export default {
     'no-empty-lines-after-it': noEmptyLinesAfterIt,
     'no-empty-act': noEmptyAct,
     'no-empty-assert': noEmptyAssert,
-    'no-new-error-in-server': noNewErrorInServer,
     'no-try-catch-in-tests': noTryCatchInTests,
     'single-spec-per-sut': singleSpecPerSut,
     'no-when-in-it': noWhenInIt,
