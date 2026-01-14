@@ -71,7 +71,7 @@ custom-rules-cli --version
 
 ## Applied Rules
 
-The CLI automatically applies all 16 custom rules defined in the plugin:
+The CLI automatically applies all 17 custom rules defined in the plugin:
 
 1. `describe-naming-convention` - Naming patterns for describe blocks
 2. `first-describe-filename` - First describe must match filename
@@ -89,6 +89,7 @@ The CLI automatically applies all 16 custom rules defined in the plugin:
 14. `no-when-in-it` - Test titles should not contain "when"
 15. `require-arrange-act-assert-comments` - Enforces AAA comments in tests
 16. `single-spec-per-sut` - Single focus per test file
+17. `helpers-at-end-of-global-describe` - Helper functions should be declared at the end of the global describe block
 
 All rules are configured in `error` mode.
 
@@ -210,4 +211,3 @@ This project is a unified package containing:
 - **ESLint Plugin**: Embedded custom rules (not published separately)
 
 The CLI dynamically loads the plugin rules from the compiled `dist/plugin/` directory and applies them to target projects without requiring ESLint configuration files.
-

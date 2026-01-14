@@ -13,6 +13,7 @@ import noEmptyAssert from './rules/no-empty-assert.js';
 import noTryCatchInTests from './rules/no-try-catch-in-tests.js';
 import singleSpecPerSut from './rules/single-spec-per-sut.js';
 import noWhenInIt from './rules/no-when-in-it.js';
+import helpersAtEndOfGlobalDescribe from './rules/helpers-at-end-of-global-describe.js';
 
 export default {
   rules: {
@@ -31,5 +32,6 @@ export default {
     'no-try-catch-in-tests': noTryCatchInTests,
     'single-spec-per-sut': singleSpecPerSut,
     'no-when-in-it': noWhenInIt,
+    'helpers-at-end-of-global-describe': helpersAtEndOfGlobalDescribe,
   },
 };
