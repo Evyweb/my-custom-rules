@@ -1,5 +1,5 @@
 import type { Rule } from 'eslint';
-import {isTestFunction} from "../helpers/isTestFunction.js";
+import {isTestFunction} from "../core/helpers/isTestFunction.js";
 
 const rule: Rule.RuleModule = {
   meta: {

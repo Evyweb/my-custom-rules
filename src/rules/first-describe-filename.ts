@@ -1,5 +1,5 @@
 import type { Rule } from 'eslint';
-import { isDescribeFunction } from "../helpers/isDescribeFunction.js";
+import { isDescribeFunction } from "../core/helpers/isDescribeFunction.js";
 import path from 'path';
 
 const rule: Rule.RuleModule = {

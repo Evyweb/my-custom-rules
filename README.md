@@ -102,7 +102,7 @@ custom-rules-cli --version
 
 ## Applied Rules
 
-The CLI automatically applies all 17 custom rules defined in the plugin:
+The CLI automatically applies all 17 custom rules defined in the rules bundle:
 
 1. `describe-naming-convention` - Naming patterns for describe blocks
 2. `first-describe-filename` - First describe must match filename
@@ -146,7 +146,7 @@ npm unlink -g
 
 ## Updating Rules
 
-After modifying a rule in `src/plugin/rules/`:
+After modifying a rule in `src/rules/`:
 
 ```bash
 # Build the entire project
@@ -164,19 +164,20 @@ my-custom-rules/
 ├── bin/
 │   └── custom-rules-cli.js        # CLI entry point
 ├── src/
-│   ├── cli.ts                     # Main orchestrator
-│   ├── commands/
-│   │   ├── lint.ts                # Lint command
-│   │   └── config.ts              # Config command
-│   ├── utils/
-│   │   ├── prompt.ts              # Interactive prompts
-│   │   ├── eslint-runner.ts       # ESLint execution
-│   │   ├── error-selector.ts      # Error formatting
-│   │   └── config.ts              # Configuration management
-│   └── plugin/                    # ESLint plugin (embedded)
-│       ├── index.ts               # Plugin entry point
-│       ├── rules/                 # Custom rules
-│       └── helpers/               # Shared utilities
+│   ├── core/                      # CLI implementation
+│   │   ├── cli.ts                 # Main orchestrator
+│   │   ├── commands/
+│   │   │   ├── lint.ts            # Lint command
+│   │   │   └── config.ts          # Config command
+│   │   ├── utils/
+│   │   │   ├── prompt.ts          # Interactive prompts
+│   │   │   ├── eslint-runner.ts   # ESLint execution
+│   │   │   ├── error-selector.ts  # Error formatting
+│   │   │   └── config.ts          # Configuration management
+│   │   └── helpers/               # Shared utilities
+│   └── rules/                     # ESLint rules (embedded)
+│       ├── index.ts               # Rules barrel
+│       └── *.ts                   # Custom rules
 ├── specs/
 │   └── plugin/
 │       └── rules/                 # Test files (Vitest)
@@ -206,7 +207,7 @@ npm run dev
 
 ### Testing
 
-The project uses Vitest for testing. All plugin rules have comprehensive test coverage:
+The project uses Vitest for testing. All rules have comprehensive test coverage:
 
 ```bash
 # Run all tests
@@ -245,4 +246,4 @@ This project is a unified package containing:
 - **CLI Tool**: Command-line interface for linting projects
 - **ESLint Plugin**: Embedded custom rules (not published separately)
 
-The CLI dynamically loads the plugin rules from the compiled `dist/plugin/` directory and applies them to target projects without requiring ESLint configuration files.
+The CLI dynamically loads the rules from the compiled `dist/rules/` directory and applies them to target projects without requiring ESLint configuration files.

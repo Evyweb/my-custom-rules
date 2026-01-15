@@ -26,7 +26,7 @@ export interface LintResult {
 
 export async function runESLint(globPattern: string, shouldFix: boolean = false, enabledRules?: string[]): Promise<LintResult | null> {
   try {
-    const pluginPath = path.resolve(__dirname, '../plugin/index.js');
+    const pluginPath = path.resolve(__dirname, '../../rules/index.js');
 
     try {
       await fs.access(pluginPath);
