@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/describe-naming-convention.js';
+import rule from '../../../src/rules/describe-naming-convention.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

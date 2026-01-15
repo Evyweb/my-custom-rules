@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/no-empty-lines-after-it.js';
+import rule from '../../../src/rules/no-empty-lines-after-it.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

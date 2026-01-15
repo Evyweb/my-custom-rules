@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/it-should-start-with-should.js';
+import rule from '../../../src/rules/it-should-start-with-should.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

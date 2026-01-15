@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/require-arrange-act-assert-comments.js';
+import rule from '../../../src/rules/require-arrange-act-assert-comments.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;
