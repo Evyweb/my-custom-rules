@@ -1,5 +1,5 @@
 import type { Rule } from 'eslint';
-import { isDescribeFunction } from "../helpers/isDescribeFunction.js";
+import { isDescribeFunction } from "../core/helpers/isDescribeFunction.js";
 
 const message = 'Helper functions should be declared at the end of the global describe block';
 

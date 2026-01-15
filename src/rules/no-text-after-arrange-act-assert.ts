@@ -1,6 +1,6 @@
 import type { Rule } from 'eslint';
-import {findCommentsStartingWith} from "../helpers/findCommentsStartingWith.js";
-import {isTestFunction} from "../helpers/isTestFunction.js";
+import {findCommentsStartingWith} from "../core/helpers/findCommentsStartingWith.js";
+import {isTestFunction} from "../core/helpers/isTestFunction.js";
 
 const rule: Rule.RuleModule = {
   meta: {
