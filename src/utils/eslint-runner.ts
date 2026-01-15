@@ -24,7 +24,7 @@ export interface LintResult {
   scannedFiles: string[];
 }
 
-export async function runESLint(globPattern: string, shouldFix: boolean = false): Promise<LintResult | null> {
+export async function runESLint(globPattern: string, shouldFix: boolean = false, enabledRules?: string[]): Promise<LintResult | null> {
   try {
     const pluginPath = path.resolve(__dirname, '../plugin/index.js');
 
@@ -62,7 +62,9 @@ export async function runESLint(globPattern: string, shouldFix: boolean = false)
           },
           rules: {
             ...Object.keys(customRulesPlugin.rules).reduce((acc: Record<string, any>, ruleName) => {
-              acc[`custom-rules/${ruleName}`] = 'error';
+              if (!enabledRules || enabledRules.includes(ruleName)) {
+                acc[`custom-rules/${ruleName}`] = 'error';
+              }
               return acc;
             }, {})
           }

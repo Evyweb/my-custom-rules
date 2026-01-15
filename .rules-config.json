@@ -1,0 +1,19 @@
+{
+  "enabledRules": [
+    "describe-naming-convention",
+    "it-should-start-with-should",
+    "require-arrange-act-assert-comments",
+    "no-duplicate-arrange-act-assert-comments",
+    "no-text-after-arrange-act-assert",
+    "no-arrange-act-assert-in-setup",
+    "no-vi-mock",
+    "first-describe-filename",
+    "no-empty-arrange",
+    "no-empty-lines-after-it",
+    "no-empty-act",
+    "no-empty-assert",
+    "no-try-catch-in-tests",
+    "single-spec-per-sut",
+    "no-when-in-it"
+  ]
+}

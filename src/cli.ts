@@ -1,5 +1,6 @@
 import { program } from 'commander';
 import { lintCommand } from './commands/lint.js';
+import { configCommand } from './commands/config.js';
 
 const MIN_NODE_VERSION = 18;
 const currentVersion = parseInt(process.version.slice(1));
@@ -19,6 +20,11 @@ program
   .description('Lint files using custom ESLint rules (supports glob patterns like "src/**/*.ts")')
   .option('-f, --fix', 'Automatically fix problems')
   .action(lintCommand);
+
+program
+  .command('config')
+  .description('Configure which rules are active (settings saved in my-custom-rules project)')
+  .action(configCommand);
 
 program.parse();
 

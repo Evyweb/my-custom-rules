@@ -1,4 +1,4 @@
-# Custom ESLint Rules CLI
+# Custom ESLint Rules CLI (WIP)
 
 Global CLI to apply your custom ESLint rules to any project.
 
@@ -56,6 +56,34 @@ or the short form:
 custom-rules-cli lint ./src -f
 ```
 
+### Config Command
+
+Configure which rules are active. The configuration is saved in the `my-custom-rules` project directory and applies to all subsequent lint runs.
+
+```bash
+custom-rules-cli config
+```
+
+This opens an interactive multi-select list where you can:
+- Use **Space** to toggle rules on/off
+- Use **Arrow keys** to navigate
+- Press **Enter** to confirm your selection
+
+The configuration is saved to `.rules-config.json` in the project root. By default, all rules are enabled.
+
+When running the `lint` command, active rules are displayed at startup:
+
+```
+Active rules:
+  + describe-naming-convention
+  + it-should-start-with-should
+  ...
+
+  (X rules disabled)
+
+To customize active rules, run: custom-rules-cli config
+```
+
 ### Help
 
 ```bash
@@ -64,6 +92,9 @@ custom-rules-cli --help
 
 # Help for lint command
 custom-rules-cli lint --help
+
+# Help for config command
+custom-rules-cli config --help
 
 # Version
 custom-rules-cli --version
@@ -99,6 +130,7 @@ The CLI:
 - Ignores target project's ESLint configuration (`.eslintrc`, `eslint.config.js`)
 - Applies only your custom rules
 - Works on `.js`, `.ts`, `.jsx`, `.tsx` files
+- Stores rule configuration in `.rules-config.json` (use `custom-rules-cli config` to modify)
 
 ## Uninstallation
 
@@ -134,19 +166,22 @@ my-custom-rules/
 ├── src/
 │   ├── cli.ts                     # Main orchestrator
 │   ├── commands/
-│   │   └── lint.ts                # Lint command
+│   │   ├── lint.ts                # Lint command
+│   │   └── config.ts              # Config command
 │   ├── utils/
 │   │   ├── prompt.ts              # Interactive prompts
 │   │   ├── eslint-runner.ts       # ESLint execution
-│   │   └── error-selector.ts      # Error formatting
+│   │   ├── error-selector.ts      # Error formatting
+│   │   └── config.ts              # Configuration management
 │   └── plugin/                    # ESLint plugin (embedded)
 │       ├── index.ts               # Plugin entry point
-│       ├── rules/                 # 16 custom rules
+│       ├── rules/                 # Custom rules
 │       └── helpers/               # Shared utilities
 ├── specs/
 │   └── plugin/
 │       └── rules/                 # Test files (Vitest)
 ├── dist/                          # Compiled output
+├── .rules-config.json             # Rules configuration (generated)
 ├── package.json                   # NPM configuration
 ├── tsconfig.json                  # TypeScript config
 ├── vitest.config.ts               # Test configuration
