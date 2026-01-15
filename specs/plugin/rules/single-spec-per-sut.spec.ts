@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/single-spec-per-sut.js';
+import rule from '../../../src/rules/single-spec-per-sut.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

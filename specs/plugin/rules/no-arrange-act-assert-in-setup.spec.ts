@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/no-arrange-act-assert-in-setup.js';
+import rule from '../../../src/rules/no-arrange-act-assert-in-setup.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

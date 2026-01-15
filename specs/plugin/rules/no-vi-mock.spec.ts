@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/no-vi-mock.js';
+import rule from '../../../src/rules/no-vi-mock.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

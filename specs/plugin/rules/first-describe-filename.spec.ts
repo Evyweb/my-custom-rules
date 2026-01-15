@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/first-describe-filename.js';
+import rule from '../../../src/rules/first-describe-filename.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

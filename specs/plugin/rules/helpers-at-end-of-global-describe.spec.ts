@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/helpers-at-end-of-global-describe.js';
+import rule from '../../../src/rules/helpers-at-end-of-global-describe.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/no-empty-assert.js';
+import rule from '../../../src/rules/no-empty-assert.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/no-try-catch-in-tests.js';
+import rule from '../../../src/rules/no-try-catch-in-tests.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

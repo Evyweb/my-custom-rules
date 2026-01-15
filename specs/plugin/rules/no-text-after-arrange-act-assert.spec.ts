@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/no-text-after-arrange-act-assert.js';
+import rule from '../../../src/rules/no-text-after-arrange-act-assert.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

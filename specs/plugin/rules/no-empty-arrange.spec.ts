@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/no-empty-arrange.js';
+import rule from '../../../src/rules/no-empty-arrange.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;

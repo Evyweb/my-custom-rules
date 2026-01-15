@@ -1,5 +1,5 @@
 import {RuleTester} from 'eslint';
-import rule from '../../../dist/plugin/rules/no-when-in-it.js';
+import rule from '../../../src/rules/no-when-in-it.js';
 
 RuleTester.it = it;
 RuleTester.describe = describe;
